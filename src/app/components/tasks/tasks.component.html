@@ -1,0 +1,66 @@
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Your Task Manager</h1>
+      <!-- <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p> -->
+      <p>
+        <a class="btn btn-primary my-2" (click)="showAddTask()">Add Task</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light" *ngIf= "!show">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="album py-5 bg-light" *ngIf="show">
+    <div class="container">
+      <div class="row">
+        <div class="text-center" style="width:100%">
+          <form class="form-signin">
+            <!-- <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+            <h1 class="h3 mb-3 font-weight-normal">Add Tasks</h1>
+            <label for="inputName" class="sr-only">Task Name</label>
+            <input type="text" id="inputName" class="form-control" placeholder="Name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" required autofocus>
+            <label for="inputDescription" class="sr-only">Description</label>
+            <input type="text" id="inputDescription" class="form-control" placeholder="Description" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" required autofocus>
+            <label for="inputImage" class="sr-only">Image</label>
+            <input type="text" id="inputImage" class="form-control" placeholder="Image" [(ngModel)]="image" [ngModelOptions]="{standalone: true}" required>
+            <label for="inputCreatedBy" class="sr-only">Created By</label>
+            <input type="text" id="inputCreatedBy" class="form-control" placeholder="Created By" [(ngModel)]="createdBy" [ngModelOptions]="{standalone: true}" required>
+            <label for="inputAssignedTo" class="sr-only">Assigned To</label>
+            <input type="text" id="inputAssignedTo" class="form-control" placeholder="Assigned To" [(ngModel)]="assignedTo" [ngModelOptions]="{standalone: true}" required>
+      
+            <div class="checkbox mb-3">
+              
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="addTask()">Add</button>
+      
+            <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
